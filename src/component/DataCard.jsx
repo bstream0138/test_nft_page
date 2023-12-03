@@ -8,7 +8,7 @@ const DateCard = ({ date, todos }) => {
         >
           {date}
         </div>
-        <div className="grow p-2">
+        <div className="grow p-2 text-black">
           {todos.map((v, i) => {
             return <div key={i}>{v}</div>;
           })}
