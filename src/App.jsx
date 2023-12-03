@@ -16,8 +16,12 @@ export const {
 export const fetchNFTData = async () => {
   try {
     const ipfsHashes = [
-      "Qmah7UenrND7dG9cuAz86hRvYHUDjKBZrLd5LGZ5qaYLVJ",
-      "Qme3XDsTUHSBYP8X6aLa5U3rAmWQhS9ynpnTQtroHqWUex"
+      "QmPM1JHfJg8c27CYWJ4wtojtmGMFeUrY5nz1E3d9czNtgG",
+      "QmRjkfSiQhgVMH3uuaadarTLpL9AfhTCspcdJrdwCHrUgv",
+      "QmVEGQmXG1jak4P9wkLmkGwupKU6yCK9LL6a6698YwtXMF",
+      "QmTRF1iaR7k2AxvS98w49mGAie1he4LkroxehbSrdkTNBq",
+      "QmcGBYTBmG8H1GfCKyJDhKTqjp4LypQf4ouxHnzwcWbiVw",
+      "Qmah7UenrND7dG9cuAz86hRvYHUDjKBZrLd5LGZ5qaYLVJ"
     ];
 
     const imageUrls = ipfsHashes.map(hash => 
@@ -38,19 +42,11 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <h1 className="mb-12 text-2xl font-bold">2023년 11월</h1>
-      <ul className="grid grid-cols-7 gap-4">
-        <li className="w-32 h-32"></li>
-        {nftData && nftData.map((v, i) => {
-          return <NFTCard key={i} nft={v} />;
-        })}
-      </ul>
-      <ul className="grid grid-cols-7 gap-4">
-        <li className="w-32 h-32"></li>
-        <li className="w-32 h-32"></li>
-        {DateData.map((v, i) => {
-          return <DataCard key={i} date={v.date} todos={v.todos} />;
+    <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white">
+      <h1 className="mb-12 text-2xl font-bold">BCS4 Developers!</h1>
+      <ul className="grid grid-cols-3 gap-4">
+        {nftData && nftData.map((url, i) => {
+          return <NFTCard key={i} nft={url} />;
         })}
       </ul>
     </div>
